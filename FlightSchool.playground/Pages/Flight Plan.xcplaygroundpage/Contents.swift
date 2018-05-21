@@ -16,14 +16,15 @@ struct FlightPlan:Decodable{
         return departureDates["actual"]
     }
     
-
+    
+    
     private enum Codingkeys:String,CodingKey{
         case aircraft
         case route
         case flightRules = "flight_rules"
         case remarks
         case departureDates = "departure_time"
-    }
+    }//自定义key的名称
 }
 
 struct Aircraft:Decodable{
@@ -48,17 +49,21 @@ let json = """
         "proposed": "2018-04-20T14:15:00-0700",
         "actual": "2018-04-20T14:20:00-0700"
     },
-    "remarks": nullj
+    "remarks": null
 }
 """.data(using: .utf8)!
 
 var decoder = JSONDecoder()
 decoder.dateDecodingStrategy = .iso8601
 
-if let plan = try?decoder.decode(FlightPlan.self, from: json){
+//使用可选绑定避免意外
+if let plan = try? decoder.decode(FlightPlan.self, from: json){
     print(plan.aircraft.identification)
     print(plan.actualDepartureDates!)
     print(plan.proposedDepartureDates ?? "")
 }
+
+
+
 
 

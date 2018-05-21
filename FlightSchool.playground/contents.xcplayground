@@ -3,5 +3,7 @@
     <pages>
         <page name='First Flight'/>
         <page name='Flight Plan'/>
+        <page name='DecoderUnKnownKey'/>
+        <page name='Untitled Page'/>
     </pages>
 </playground>
