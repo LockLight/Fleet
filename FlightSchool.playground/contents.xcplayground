@@ -4,6 +4,6 @@
         <page name='First Flight'/>
         <page name='Flight Plan'/>
         <page name='DecoderUnKnownKey'/>
-        <page name='Untitled Page'/>
+        <page name='DecoderUnCertainType'/>
     </pages>
 </playground>
