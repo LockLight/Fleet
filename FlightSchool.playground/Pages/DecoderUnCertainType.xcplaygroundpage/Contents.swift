@@ -24,11 +24,13 @@ struct plane:Decodable{
     var identifier:String
 }
 
+//泛型枚举
 enum Either<T,U>{
     case left(T)
     case right(U)
 }
 
+//拓展Either类型,自定义Decodabel协议
 extension Either:Decodable where T:Decodable,
                                  U:Decodable{
     init(from decoder: Decoder) throws {
