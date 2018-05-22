@@ -6,5 +6,6 @@
         <page name='DecoderUnKnownKey'/>
         <page name='DecoderUnCertainType'/>
         <page name='DecoderRandomType'/>
+        <page name='DecoderDiffType'/>
     </pages>
 </playground>
