@@ -2,18 +2,6 @@
 
 import Foundation
 
-//{
-//    "points": ["KSQL", "KWVI"],
-//    "KSQL": {
-//        "code": "KSQL",
-//        "name": "San Carlos Airport"
-//    },
-//    "KWVI": {
-//        "code": "KWVI",
-//        "name": "Watsonville Municipal Airport"
-//    }
-//}    points建---->动态
-
 public struct Route: Decodable {
     public struct Airport: Decodable {
         public var code: String
@@ -57,3 +45,26 @@ public struct Route: Decodable {
         self.points = points
     }
 }
+
+//points建---->动态
+let json = """
+{
+    "points": ["KSQL", "KWVI"],
+    "KSQL": {
+        "code": "KSQL",
+        "name": "San Carlos Airport"
+    },
+    "KWVI": {
+        "code": "KWVI",
+        "name": "Watsonville Municipal Airport"
+    }
+}
+""".data(using: .utf8)!
+
+let decoder = JSONDecoder()
+let routes  = try! decoder.decode(Route.self, from:json)
+let point = routes.points
+
+
+
+

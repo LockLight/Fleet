@@ -7,5 +7,6 @@
         <page name='DecoderUnCertainType'/>
         <page name='DecoderRandomType'/>
         <page name='DecoderDiffType'/>
+        <page name='Decoder_Inherit '/>
     </pages>
 </playground>
